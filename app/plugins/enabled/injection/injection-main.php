@@ -1,0 +1,23 @@
+<?php
+/**
+  *  @name              Injection Module
+  *  @description       Module for injection protection
+  *  @author            Vinicius Tavares <vinerz@vinerz.net>
+  *  @plugin_url        http://www.xenon-corporation.com/yogo/plugin/injection
+  *  @plugin_sysname    injection
+  *  @plugin_version    1.0.0
+  */
+  
+  
+/**
+  *  ALMOST DEPRECATED AS THE SYSTEM HAS NOW SUPPORT OF PREPARED STATEMENTS
+  *  MAY BE STILL NEEDED FOR ANTI XSS TECHNIQUES
+  */
+
+foreach ($_GET as $key => $value) {
+    $_GET[$key] = addslashes($value);
+}
+
+foreach ($_POST as $key => $value) {
+    $_POST[$key] = addslashes(utf8_decode($value));
+}

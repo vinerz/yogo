@@ -1,0 +1,1 @@
+Sua mensagem foi <b>{MSG}</b>
